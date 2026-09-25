@@ -1,0 +1,4 @@
+/logfmt-lint
+*.test
+*.out
+.DS_Store
