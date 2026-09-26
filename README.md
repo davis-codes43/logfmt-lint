@@ -77,8 +77,9 @@ bad.log: line 3: duplicate key "status"
 ## Status
 
 Early skeleton: the parser, pretty-printer, and CLI flags described
-above are implemented. No JSON output, no streaming mode, and no test
-suite yet - see the roadmap in commit history for what's next.
+above are implemented, with unit tests covering the strict/lenient
+parser edge cases. No JSON output and no streaming mode yet - see the
+roadmap in commit history for what's next.
 
 ## License
 
