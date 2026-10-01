@@ -54,6 +54,14 @@ $ ./logfmt-lint app.log
 time=2024-01-15T10:23:01Z  level=info  msg="request completed"  duration=45ms  status=200
 ```
 
+Emit newline-delimited JSON, one object per record, with keys in the
+order they appeared in the line and all values as strings:
+
+```
+$ ./logfmt-lint --format json app.log
+{"time":"2024-01-15T10:23:01Z","level":"info","msg":"request completed","status":"200","duration":"45ms"}
+```
+
 Validate without printing anything but errors:
 
 ```
@@ -78,8 +86,8 @@ bad.log: line 3: duplicate key "status"
 
 Early skeleton: the parser, pretty-printer, and CLI flags described
 above are implemented, with unit tests covering the strict/lenient
-parser edge cases. No JSON output and no streaming mode yet - see the
-roadmap in commit history for what's next.
+parser edge cases, plus JSON output via `--format json`. No streaming
+mode yet: the whole input is read into memory before parsing.
 
 ## License
 
